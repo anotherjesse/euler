@@ -1,18 +1,22 @@
 n = 600851475143
 
-factors = []
-factor = 2
+def factor(n)
+  factors = []
+  m = 2
 
-loop do
-  break if n == 1
+  loop do
+    break if n == 1
 
-  if n % factor == 0
-    factors << factor
-    n /= factor
-  else
-    factor += 1
+    if n % m == 0
+      factors << m
+      n /= m
+    else
+      m += 1
+    end
   end
+
+  return factors
 end
 
-puts factors.max
+puts factor(n).max
 
